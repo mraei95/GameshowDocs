@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal & Compliance Portal — Stage Host Discord Bot</title>
+  <meta name="description" content="Official Terms of Service, Privacy Policy, and Compliance Documentation for Stage Host Discord Bot.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Tab Switcher & Search Enhancements */
+    .view-switcher-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-pills {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .tab-pill {
+      background: none;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.15s ease;
+    }
+
+    .tab-pill:hover {
+      color: var(--text-main);
+      background-color: var(--bg-secondary);
+    }
+
+    .tab-pill.active {
+      color: #fff;
+      background-color: var(--accent-blurple);
+      box-shadow: 0 2px 10px rgba(88, 101, 242, 0.35);
+    }
+
+    .search-box-wrapper {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.5rem 0.85rem 0.5rem 2.2rem;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-blurple);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+
+    .direct-url-links {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+      padding: 0 0.25rem;
+    }
+
+    .direct-url-links a {
+      color: #818cf8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .direct-url-links a:hover {
+      text-decoration: underline;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .highlight-match {
+      background-color: rgba(245, 158, 11, 0.3);
+      padding: 0.1rem 0.25rem;
+      border-radius: 3px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="22"></line>
+          </svg>
+        </div>
+        <span>Stage Host</span>
+        <span class="brand-badge">Compliance Center</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#terms" class="nav-tab" onclick="switchTab('terms')">Terms</a>
+        <a href="#privacy" class="nav-tab" onclick="switchTab('privacy')">Privacy</a>
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="nav-tab nav-btn">Discord Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="page-container">
+    <header class="hero-header">
+      <div class="hero-meta">
+        <span class="status-indicator"><span class="status-dot"></span> Discord Developer Verified Standards</span>
+        <span>Version 1.2 • Published October 2026</span>
+      </div>
+      <h1 class="hero-title">Terms & Privacy Documentation</h1>
+      <p class="hero-description">
+        Comprehensive legal agreements, privacy protections, and voice safety policies for the <strong>Stage Host</strong> Discord Game Show bot.
+      </p>
+    </header>
+
+    <!-- Interactive View Switcher & Search Bar -->
+    <div class="view-switcher-bar">
+      <div class="tab-pills">
+        <button id="pill-terms" class="tab-pill active" onclick="switchTab('terms')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Terms of Service
+        </button>
+        <button id="pill-privacy" class="tab-pill" onclick="switchTab('privacy')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Privacy Policy
+        </button>
+      </div>
+
+      <div class="search-box-wrapper">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="clause-search" class="search-input" placeholder="Search clauses (e.g. voice, refund, data)..." oninput="handleSearch(this.value)">
+      </div>
+    </div>
+
+    <!-- Direct Permalinks for Discord Developer Portal -->
+    <div class="direct-url-links">
+      <span>Direct links for Discord Portal input:</span>
+      <a href="terms.html" target="_blank">
+        <code>terms.html</code>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+      <span>•</span>
+      <a href="privacy.html" target="_blank">
+        <code>privacy.html</code>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+    </div>
+
+    <!-- TAB 1: TERMS OF SERVICE -->
+    <div id="tab-terms" class="tab-content active">
+      <!-- Human-Readable Summary Cards -->
+      <section class="summary-cards-grid">
+        <div class="summary-card">
+          <div class="summary-card-icon" style="background: rgba(88, 101, 242, 0.15); color: #818cf8;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Discord Compliance</h3>
+          <p>By inviting or using Stage Host, server owners and contestants agree to honor all official Discord Developer and Community Terms.</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+          </div>
+          <h3>Stage Movement Rules</h3>
+          <p>Contestants on Stage agree to automatic speaker/audience movement based on trivia answers. We never record or eavesdrop on your voice audio.</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3>Question File Safety</h3>
+          <p>Server moderators are responsible for custom uploaded question files. Any malicious code, hate speech, or harassment is strictly prohibited.</p>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="toc-sidebar">
+          <div class="toc-title">Terms Navigation</div>
+          <ul class="toc-list">
+            <li><a href="#t-acceptance" class="toc-link">1. Acceptance of Terms</a></li>
+            <li><a href="#t-license" class="toc-link">2. Description & License</a></li>
+            <li><a href="#t-responsibilities" class="toc-link">3. User Responsibilities</a></li>
+            <li><a href="#t-stage-mechanics" class="toc-link">4. Stage Operations & Voice</a></li>
+            <li><a href="#t-question-content" class="toc-link">5. Question Packs & Uploads</a></li>
+            <li><a href="#t-billing" class="toc-link">6. Subscriptions & Billing</a></li>
+            <li><a href="#t-disclaimers" class="toc-link">7. Availability Disclaimer</a></li>
+            <li><a href="#t-liability" class="toc-link">8. Limitation of Liability</a></li>
+            <li><a href="#t-termination" class="toc-link">9. Termination</a></li>
+            <li><a href="#t-contact" class="toc-link">10. Contact Us</a></li>
+          </ul>
+        </aside>
+
+        <article class="document-body">
+          <section id="t-acceptance" class="doc-section">
+            <span class="section-tag">CLAUSE 01</span>
+            <h2 class="section-heading">1. Acceptance of Terms</h2>
+            <p>
+              By adding <strong>Stage Host</strong> to a Discord server, or by interacting with its slash commands, buttons, menus, or stage game instances, you agree to be legally bound by these Terms of Service.
+            </p>
+            <div class="callout callout-blurple">
+              <div class="callout-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              </div>
+              <div class="callout-content">
+                <strong>Discord Ecosystem Compliance</strong>
+                Stage Host is an independent application and is not created, sponsored, or endorsed by Discord Inc. Your use requires compliance with the <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer" style="color: #c7d2fe; text-decoration: underline;">Discord Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer" style="color: #c7d2fe; text-decoration: underline;">Community Guidelines</a>.
+              </div>
+            </div>
+          </section>
+
+          <section id="t-license" class="doc-section">
+            <span class="section-tag">CLAUSE 02</span>
+            <h2 class="section-heading">2. Description of Service & License</h2>
+            <p>
+              Stage Host provides automated game show orchestration tools, including live Stage Channel speaker/audience state coordination, timed trivia rounds, blind interactive button voting, question pack parsers, and moderator control panels. We grant you a revocable, non-exclusive license to use the Bot within authorized Discord servers.
+            </p>
+          </section>
+
+          <section id="t-responsibilities" class="doc-section">
+            <span class="section-tag">CLAUSE 03</span>
+            <h2 class="section-heading">3. User & Administrator Responsibilities</h2>
+            <p>Users and moderators agree not to reverse engineer the Bot, automate answer voting with scripts/macros, abuse Discord permissions to harass participants, or intentionally flood the service to trigger Discord rate limits.</p>
+          </section>
+
+          <section id="t-stage-mechanics" class="doc-section">
+            <span class="section-tag">CLAUSE 04</span>
+            <h2 class="section-heading">4. Stage Operations & Voice Disclaimer</h2>
+            <div class="callout callout-emerald">
+              <div class="callout-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+              </div>
+              <div class="callout-content">
+                <strong>Zero Voice Audio Capture</strong>
+                Stage Host does NOT listen to, record, store, or transmit voice audio from your Discord Stage or voice channels. Our service only inspects voice metadata (whether a member is a Speaker or Audience member) to enforce elimination rules.
+              </div>
+            </div>
+            <p>
+              Network latency, mic disconnects, and Discord Gateway dropouts are inherent to real-time voice and are outside our operational liability.
+            </p>
+          </section>
+
+          <section id="t-question-content" class="doc-section">
+            <span class="section-tag">CLAUSE 05</span>
+            <h2 class="section-heading">5. Question Packs & User-Uploaded Content</h2>
+            <p>
+              Server administrators uploading custom JSON or CSV question files warrant that their content contains no copyright violations, illegal material, or hate speech. We reserve the right to reject files that crash parsers or violate Discord safety guidelines.
+            </p>
+          </section>
+
+          <section id="t-billing" class="doc-section">
+            <span class="section-tag">CLAUSE 06</span>
+            <h2 class="section-heading">6. Subscriptions, Payments & Refunds</h2>
+            <p>
+              Certain advanced capacities (e.g. extended contestant limits or white-label branding) may require an active Pro Guild Subscription or Event Pass. In-app purchases via Discord follow <a href="https://support.discord.com/hc/en-us/articles/360012668071-Discord-Paid-Services-Terms" target="_blank" rel="noopener noreferrer" style="color: #c7d2fe;">Discord's Paid Services Terms</a>. Due to immediate digital provisioning, purchases are non-refundable unless required by applicable law.
+            </p>
+          </section>
+
+          <section id="t-disclaimers" class="doc-section">
+            <span class="section-tag">CLAUSE 07</span>
+            <h2 class="section-heading">7. Service Availability & "AS-IS"</h2>
+            <p>
+              Stage Host is provided on an "AS-IS" and "AS-AVAILABLE" basis without warranties of any kind. We do not guarantee zero downtime during Discord API outages or maintenance intervals.
+            </p>
+          </section>
+
+          <section id="t-liability" class="doc-section">
+            <span class="section-tag">CLAUSE 08</span>
+            <h2 class="section-heading">8. Limitation of Liability</h2>
+            <p>
+              Under no circumstances shall the operators of Stage Host be liable for indirect, incidental, or consequential damages resulting from your use of the Bot, including prize disputes or server moderation disagreements.
+            </p>
+          </section>
+
+          <section id="t-termination" class="doc-section">
+            <span class="section-tag">CLAUSE 09</span>
+            <h2 class="section-heading">9. Termination & Blacklisting</h2>
+            <p>
+              We reserve the right to restrict or blacklist servers and users that abuse the service, exploit bugs, or engage in malicious behavior.
+            </p>
+          </section>
+
+          <section id="t-contact" class="doc-section">
+            <span class="section-tag">CLAUSE 10</span>
+            <h2 class="section-heading">10. Contact Information</h2>
+            <p>
+              For legal inquiries or support, contact us via our official GitHub repository or Discord community.
+            </p>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <!-- TAB 2: PRIVACY POLICY -->
+    <div id="tab-privacy" class="tab-content">
+      <!-- Human-Readable Summary Cards -->
+      <section class="summary-cards-grid">
+        <div class="summary-card">
+          <div class="summary-card-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Zero Voice Recording</h3>
+          <p>We monitor voice state (Speaker vs. Audience status) to enforce game show rules. We <strong>never</strong> listen to, record, or store microphone audio.</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-icon" style="background: rgba(88, 101, 242, 0.15); color: #818cf8;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>Ephemeral In-Memory Data</h3>
+          <p>Contestant button clicks and votes are temporary, held in active memory during the 15-second round, and wiped clean when the show concludes.</p>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <h3>No Data Brokering</h3>
+          <p>We do not sell, rent, or monetize personal user data to advertisers or third-party brokers. Your community data stays in your community.</p>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <aside class="toc-sidebar">
+          <div class="toc-title">Privacy Navigation</div>
+          <ul class="toc-list">
+            <li><a href="#p-overview" class="toc-link">1. Policy Overview</a></li>
+            <li><a href="#p-collected" class="toc-link">2. Data We Collect</a></li>
+            <li><a href="#p-not-collected" class="toc-link">3. What We Do NOT Collect</a></li>
+            <li><a href="#p-voice-privacy" class="toc-link">4. Voice & Audio Privacy</a></li>
+            <li><a href="#p-usage" class="toc-link">5. How We Use Data</a></li>
+            <li><a href="#p-retention" class="toc-link">6. Storage & Retention</a></li>
+            <li><a href="#p-sharing" class="toc-link">7. Third-Party Sharing</a></li>
+            <li><a href="#p-rights" class="toc-link">8. User Rights & Deletion</a></li>
+            <li><a href="#p-security" class="toc-link">9. Security Safeguards</a></li>
+            <li><a href="#p-contact" class="toc-link">10. Contact Us</a></li>
+          </ul>
+        </aside>
+
+        <article class="document-body">
+          <section id="p-overview" class="doc-section">
+            <span class="section-tag">SECTION 01</span>
+            <h2 class="section-heading">1. Policy Overview</h2>
+            <p>
+              This Privacy Policy describes how <strong>Stage Host</strong> processes and safeguards information when operating on Discord, in full alignment with the Discord Developer Policy, GDPR, and CCPA standards.
+            </p>
+          </section>
+
+          <section id="p-collected" class="doc-section">
+            <span class="section-tag">SECTION 02</span>
+            <h2 class="section-heading">2. Data We Collect</h2>
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Data Points</th>
+                    <th>Purpose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Identifiers</strong></td>
+                    <td>User ID, Guild ID, Channel ID</td>
+                    <td>Identifying stage channels and contestant rosters.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Profile Info</strong></td>
+                    <td>Server Display Name, Avatar URL</td>
+                    <td>Displaying survivor lists and victory embeds.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Voice State</strong></td>
+                    <td><code>suppress</code> status (Speaker vs. Audience)</td>
+                    <td>Detecting contestants and moving eliminated users to audience.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Interactions</strong></td>
+                    <td>Button votes (e.g. <code>vote_true</code>), timestamps</td>
+                    <td>Calculating scores, tie-breakers, and answer statistics.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Uploaded Files</strong></td>
+                    <td>JSON/CSV question files</td>
+                    <td>Parsing trivia questions for the event.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="p-not-collected" class="doc-section">
+            <span class="section-tag">SECTION 03</span>
+            <h2 class="section-heading">3. Data We Explicitly Do NOT Collect</h2>
+            <ul>
+              <li><strong>No Voice Recording:</strong> We never record, process, or store voice audio.</li>
+              <li><strong>No Message Scraping:</strong> We do not log general chat messages or private DMs.</li>
+              <li><strong>No Real-World Identifiers:</strong> No emails, phone numbers, real names, or physical addresses.</li>
+              <li><strong>No Financial Info:</strong> We never see or store payment card details.</li>
+            </ul>
+          </section>
+
+          <section id="p-voice-privacy" class="doc-section">
+            <span class="section-tag">SECTION 04</span>
+            <h2 class="section-heading">4. Voice & Audio Privacy Guarantee</h2>
+            <div class="callout callout-emerald">
+              <div class="callout-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+              </div>
+              <div class="callout-content">
+                <strong>Guaranteed: Zero Voice Audio Capture</strong>
+                Stage Host does NOT tap into, listen to, process, record, transcript, or transmit voice audio streams from any Discord voice or stage channel.
+              </div>
+            </div>
+            <p>
+              The Bot solely subscribes to Discord's <code>GuildVoiceStates</code> gateway event to observe metadata: specifically, whether a participant's voice state indicates they are currently a <strong>Speaker</strong> (<code>suppress: false</code>) or an <strong>Audience member</strong> (<code>suppress: true</code>).
+            </p>
+          </section>
+
+          <section id="p-usage" class="doc-section">
+            <span class="section-tag">SECTION 05</span>
+            <h2 class="section-heading">5. How We Use Collected Information</h2>
+            <p>
+              Information is used solely to execute the live stage game: counting votes locked in during the 15-second timer, computing correct answers, moving eliminated players down to the audience, and enabling the host revive menu.
+            </p>
+          </section>
+
+          <section id="p-retention" class="doc-section">
+            <span class="section-tag">SECTION 06</span>
+            <h2 class="section-heading">6. Data Storage & Retention Period</h2>
+            <p>
+              Votes and active round states are stored strictly in volatile system memory (RAM). When a game concludes or when the bot restarts, all round votes and transient game data are completely purged.
+            </p>
+          </section>
+
+          <section id="p-sharing" class="doc-section">
+            <span class="section-tag">SECTION 07</span>
+            <h2 class="section-heading">7. Third-Party Sharing & Disclosure</h2>
+            <p>
+              We do not sell, rent, or trade your data to third parties. Data is exchanged only with Discord Inc. via official API endpoints and our hosting servers.
+            </p>
+          </section>
+
+          <section id="p-rights" class="doc-section">
+            <span class="section-tag">SECTION 08</span>
+            <h2 class="section-heading">8. User Rights & Data Erasure (GDPR / CCPA)</h2>
+            <p>
+              Users and server owners have the right to request deletion of any custom uploaded question packs or server settings. Kicking the Bot from your server immediately terminates all data processing for your guild.
+            </p>
+          </section>
+
+          <section id="p-security" class="doc-section">
+            <span class="section-tag">SECTION 09</span>
+            <h2 class="section-heading">9. Security Safeguards</h2>
+            <p>
+              All communication with Discord is secured with TLS 1.3 and WSS encryption. Bot tokens and server credentials are strictly isolated in environment variables.
+            </p>
+          </section>
+
+          <section id="p-contact" class="doc-section">
+            <span class="section-tag">SECTION 10</span>
+            <h2 class="section-heading">10. Contact Us</h2>
+            <p>
+              For privacy inquiries, data deletion requests, or compliance reviews, please reach out via our GitHub repository or Discord community.
+            </p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-copy">
+        © 2026 Stage Host Discord Bot. All rights reserved. Not affiliated with Discord Inc.
+      </div>
+      <div class="footer-nav">
+        <a href="#terms" onclick="switchTab('terms')">Terms of Service</a>
+        <a href="#privacy" onclick="switchTab('privacy')">Privacy Policy</a>
+        <a href="terms.html">Standalone Terms</a>
+        <a href="privacy.html">Standalone Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tab Switching & Search Logic -->
+  <script>
+    function switchTab(tabName) {
+      const termsTab = document.getElementById('tab-terms');
+      const privacyTab = document.getElementById('tab-privacy');
+      const termsPill = document.getElementById('pill-terms');
+      const privacyPill = document.getElementById('pill-privacy');
+
+      if (tabName === 'privacy') {
+        termsTab.classList.remove('active');
+        privacyTab.classList.add('active');
+        termsPill.classList.remove('active');
+        privacyPill.classList.add('active');
+        window.location.hash = 'privacy';
+      } else {
+        privacyTab.classList.remove('active');
+        termsTab.classList.add('active');
+        privacyPill.classList.remove('active');
+        termsPill.classList.add('active');
+        window.location.hash = 'terms';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Auto-detect URL hash on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes('privacy') || hash.includes('p-')) {
+        switchTab('privacy');
+      } else {
+        switchTab('terms');
+      }
+    });
+
+    // Clause Search & Filter
+    function handleSearch(query) {
+      const q = query.trim().toLowerCase();
+      const activeTab = document.querySelector('.tab-content.active');
+      const sections = activeTab.querySelectorAll('.doc-section');
+
+      sections.forEach(sec => {
+        if (!q) {
+          sec.style.display = 'block';
+          return;
+        }
+        const text = sec.textContent.toLowerCase();
+        if (text.includes(q)) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

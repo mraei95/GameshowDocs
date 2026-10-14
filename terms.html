@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Stage Host Discord Bot</title>
+  <meta name="description" content="Terms of Service for Stage Host, the interactive Discord Stage Game Show and Trivia Host application.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="22"></line>
+          </svg>
+        </div>
+        <span>Stage Host</span>
+        <span class="brand-badge">Legal</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-tab">Overview</a>
+        <a href="terms.html" class="nav-tab active">Terms of Service</a>
+        <a href="privacy.html" class="nav-tab">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="page-container">
+    <header class="hero-header">
+      <div class="hero-meta">
+        <span class="status-indicator"><span class="status-dot"></span> Valid & In Effect</span>
+        <span>Version 1.2 • Last Updated: October 2026</span>
+      </div>
+      <h1 class="hero-title">Terms of Service</h1>
+      <p class="hero-description">
+        Please review the operational rules and legal conditions governing your use of <strong>Stage Host</strong> in your Discord servers and Stage Channels.
+      </p>
+    </header>
+
+    <!-- Human-Readable Summary Cards -->
+    <section class="summary-cards-grid">
+      <div class="summary-card">
+        <div class="summary-card-icon" style="background: rgba(88, 101, 242, 0.15); color: #818cf8;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>Discord TOS Compliance</h3>
+        <p>By inviting or using Stage Host, you and your server members agree to honor all official Discord Developer and Community Terms.</p>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-card-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+        </div>
+        <h3>Automated Game Rules</h3>
+        <p>Contestants on Stage agree to automatic speaker/audience movement based on trivia answers. We never record or eavesdrop on your voice audio.</p>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <h3>Fair Play & Custom Packs</h3>
+        <p>Server moderators are responsible for custom uploaded question files. Any malicious code, hate speech, or harassment is strictly prohibited.</p>
+      </div>
+    </section>
+
+    <!-- Layout: TOC + Articles -->
+    <div class="content-grid">
+      <aside class="toc-sidebar">
+        <div class="toc-title">Table of Contents</div>
+        <ul class="toc-list">
+          <li><a href="#acceptance" class="toc-link">1. Acceptance of Terms</a></li>
+          <li><a href="#license" class="toc-link">2. Description & License</a></li>
+          <li><a href="#responsibilities" class="toc-link">3. User Responsibilities</a></li>
+          <li><a href="#stage-mechanics" class="toc-link">4. Stage Channel Operations</a></li>
+          <li><a href="#question-content" class="toc-link">5. Question Packs & Uploads</a></li>
+          <li><a href="#billing" class="toc-link">6. Subscriptions & Payments</a></li>
+          <li><a href="#disclaimers" class="toc-link">7. Service Availability & "AS-IS"</a></li>
+          <li><a href="#liability" class="toc-link">8. Limitation of Liability</a></li>
+          <li><a href="#termination" class="toc-link">9. Termination & Blacklisting</a></li>
+          <li><a href="#contact" class="toc-link">10. Contact Information</a></li>
+        </ul>
+      </aside>
+
+      <article class="document-body">
+        <!-- 1 -->
+        <section id="acceptance" class="doc-section">
+          <span class="section-tag">CLAUSE 01</span>
+          <h2 class="section-heading">1. Acceptance of Terms</h2>
+          <p>
+            By adding <strong>Stage Host</strong> (hereinafter referred to as "the Bot", "we", "us", or "our") to a Discord server, or by interacting with its slash commands, buttons, menus, or stage game instances, you ("User", "Moderator", or "Server Owner") expressly agree to be bound by these Terms of Service.
+          </p>
+          <div class="callout callout-blurple">
+            <div class="callout-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </div>
+            <div class="callout-content">
+              <strong>Relationship to Discord</strong>
+              Stage Host is an independent application and is not created, sponsored, or endorsed by Discord Inc. Your use of Stage Host also requires strict compliance with the <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer" style="color: #c7d2fe; text-decoration: underline;">Discord Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer" style="color: #c7d2fe; text-decoration: underline;">Discord Community Guidelines</a>.
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 -->
+        <section id="license" class="doc-section">
+          <span class="section-tag">CLAUSE 02</span>
+          <h2 class="section-heading">2. Description of Service & License</h2>
+          <p>
+            Stage Host provides Discord communities with automated game show orchestration tools, including live Stage Channel speaker/audience state coordination, timed trivia rounds, blind interactive button voting, question pack parsers, and moderator control panels.
+          </p>
+          <p>
+            We grant you a revocable, non-exclusive, non-transferable license to invite and utilize the Bot within Discord servers for non-commercial or authorized commercial event production, subject to the terms set forth herein.
+          </p>
+        </section>
+
+        <!-- 3 -->
+        <section id="responsibilities" class="doc-section">
+          <span class="section-tag">CLAUSE 03</span>
+          <h2 class="section-heading">3. User & Administrator Responsibilities</h2>
+          <p>When utilizing the Bot, server administrators and participants agree that they will not:</p>
+          <ul>
+            <li>Attempt to reverse engineer, decompile, exploit, or disrupt the Bot's WebSocket, API endpoints, or database infrastructure;</li>
+            <li>Use automated scripts, macros, or bot accounts to manipulate contestant button clicks or bypass answer timers;</li>
+            <li>Abuse Discord's permission system to harass, discriminate against, or maliciously mute/suppress server participants;</li>
+            <li>Intentionally spam commands or interactions to provoke Discord rate limits or service denial.</li>
+          </ul>
+        </section>
+
+        <!-- 4 -->
+        <section id="stage-mechanics" class="doc-section">
+          <span class="section-tag">CLAUSE 04</span>
+          <h2 class="section-heading">4. Stage Channel Operations & Voice Disclaimer</h2>
+          <p>
+            The Bot utilizes Discord's <code>Mute Members</code> and <code>Move Members</code> permissions solely to manage game show mechanics by toggling participant suppression status (moving eliminated contestants from Stage Speaker to Stage Audience).
+          </p>
+          <div class="callout callout-emerald">
+            <div class="callout-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+            </div>
+            <div class="callout-content">
+              <strong>Zero Voice Audio Interception</strong>
+              Stage Host does NOT listen to, record, store, or transmit voice audio from your Discord Stage or voice channels. Our service only inspects voice metadata (such as whether a user currently holds Speaker or Audience status).
+            </div>
+          </div>
+          <p>
+            You acknowledge that participant network latency, local Discord app lag, or voice connection dropouts are inherent to real-time Internet communication and are not the fault or legal responsibility of the Bot.
+          </p>
+        </section>
+
+        <!-- 5 -->
+        <section id="question-content" class="doc-section">
+          <span class="section-tag">CLAUSE 05</span>
+          <h2 class="section-heading">5. Question Packs & User-Uploaded Content</h2>
+          <p>
+            Server administrators may upload custom question packs via JSON or CSV files using the <code>/load-questions upload</code> command. You warrant that any uploaded materials do not violate third-party intellectual property rights, trade secrets, or privacy rights, and do not contain defamatory, obscene, or unlawful material.
+          </p>
+          <p>
+            We reserve the absolute right to block or delete question files that crash the parser, contain malformed payloads, or violate Discord policies.
+          </p>
+        </section>
+
+        <!-- 6 -->
+        <section id="billing" class="doc-section">
+          <span class="section-tag">CLAUSE 06</span>
+          <h2 class="section-heading">6. Subscriptions, Payments & Refunds</h2>
+          <p>
+            Certain advanced capabilities (such as extended contestant capacity, white-label branding, or dedicated tournament analytics) may require an active Pro Guild Subscription or One-Time Event Pass.
+          </p>
+          <ul>
+            <li><strong>Discord In-App Purchases:</strong> Subscriptions processed directly within Discord are billed and managed via Discord's payment infrastructure according to <a href="https://support.discord.com/hc/en-us/articles/360012668071-Discord-Paid-Services-Terms" target="_blank" rel="noopener noreferrer" style="color: #c7d2fe;">Discord's Paid Services Terms</a>.</li>
+            <li><strong>External Checkout:</strong> Subscriptions billed via Stripe or other external gateways are recurring until cancelled via your customer portal.</li>
+            <li><strong>Refund Policy:</strong> Due to the immediate operational provisioning of cloud resources and game show capacities, purchases are generally non-refundable unless required by applicable consumer law or service failure on our end.</li>
+          </ul>
+        </section>
+
+        <!-- 7 -->
+        <section id="disclaimers" class="doc-section">
+          <span class="section-tag">CLAUSE 07</span>
+          <h2 class="section-heading">7. Service Availability & Warranty Disclaimer</h2>
+          <p>
+            STAGE HOST IS PROVIDED STRICTLY ON AN <strong>"AS-IS"</strong> AND <strong>"AS-AVAILABLE"</strong> BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
+          </p>
+          <p>
+            We do not warrant that the service will be uninterrupted, error-free, immune to Discord Gateway outages, or compatible with future unannounced Discord API breaking changes. We may perform maintenance, deploy updates, or modify features at our discretion.
+          </p>
+        </section>
+
+        <!-- 8 -->
+        <section id="liability" class="doc-section">
+          <span class="section-tag">CLAUSE 08</span>
+          <h2 class="section-heading">8. Limitation of Liability</h2>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, THE OPERATORS OF STAGE HOST SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, SERVER MEMBERSHIP DISPUTES, TOURNAMENT PRIZE DISPUTES, OR SERVICE DISRUPTIONS ARISING OUT OF YOUR USE OF THE BOT.
+          </p>
+        </section>
+
+        <!-- 9 -->
+        <section id="termination" class="doc-section">
+          <span class="section-tag">CLAUSE 09</span>
+          <h2 class="section-heading">9. Termination & Blacklisting</h2>
+          <p>
+            We reserve the right to temporarily suspend or permanently terminate access to the Bot for any server, user, or administrator found to be violating these Terms, engaging in abusive behavior, or compromising the platform's stability.
+          </p>
+        </section>
+
+        <!-- 10 -->
+        <section id="contact" class="doc-section">
+          <span class="section-tag">CLAUSE 10</span>
+          <h2 class="section-heading">10. Contact Information</h2>
+          <p>
+            If you have questions, inquiries, or legal notices concerning these Terms of Service, please reach out to our team:
+          </p>
+          <ul>
+            <li><strong>Official Discord Support:</strong> Reach out via our designated Discord support community.</li>
+            <li><strong>GitHub Repository:</strong> Submit an issue or inquiry on our official project repository.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-copy">
+        © 2026 Stage Host Discord Bot. All rights reserved. Not affiliated with Discord Inc.
+      </div>
+      <div class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
